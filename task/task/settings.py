@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^8&3^4-$tp8hb3b$j4yw8=r3vm2u0*lasnt9753bwjrmyq_+q9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','https://bookinventroy.herokuapp.com/']
+ALLOWED_HOSTS = ['gloifytest.herokuapp.com']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'googlebooks',
     'rest_framework',
+    'herokuapp',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,9 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'googlebooks/static'),)
 
 django_heroku.settings(locals())
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+import dj_database_url 
+prod_db  =  dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(prod_db)

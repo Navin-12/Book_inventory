@@ -11,5 +11,8 @@ requests==2.22.0
 sqlparse==0.3.0
 urllib3==1.25.3
 whitenoise==5.2.0
+dj-database-url==0.4.2
+pytz==2017.3
+
 
 
