@@ -28,7 +28,7 @@ SECRET_KEY = '^8&3^4-$tp8hb3b$j4yw8=r3vm2u0*lasnt9753bwjrmyq_+q9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['gloifytest.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'googlebooks',
     'rest_framework',
-    'herokuapp',
+    
 ]
 
 MIDDLEWARE = [
@@ -134,7 +134,7 @@ STATICFILES_DIRS = (
 
 django_heroku.settings(locals())
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 #import dj_database_url 
 #prod_db  =  dj_database_url.config(conn_max_age=500)
